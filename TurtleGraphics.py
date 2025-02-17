@@ -1,27 +1,38 @@
-#TurtleGraphics.py
-#Name:
-#Date:
-#Assignment:
+import turtle
 
-import turtle #needed generally but not in CodeHS
-hideturtle() #hides the default turtle in CodeHS
+# Function to draw a square
+def drawSquare(t, size):
+    for _ in range(4):
+        t.forward(size)
+        t.right(90)
 
-def drawSquare(myTurtle, size):
-    for i in range(4):
-        myTurtle.forward(size)
-        myTurtle.right(90)
+# Function to fill a corner with a smaller square
+def fillCorner(alice, corner):
+    # Draw big square
+    drawSquare(alice, 100)
 
+    if corner == 1:
+        alice.begin_fill()
+        drawSquare(alice, 50)
+        alice.end_fill()
+    elif corner == 2:
+        alice.forward(50)
+        alice.begin_fill()
+        drawSquare(alice, 50)
+        alice.end_fill()
 
+# Main function
 def main():
     myTurtle = turtle.Turtle()
-    # drawPolygon(myTurtle, 5) #draws a pentagon
-    # drawPolygon(myTurtle, 8) #draws an octogon
+    
+    # Draw the main square
+    drawSquare(myTurtle, 100)
+    
+    # Fill the top-right corner with a smaller square
+    fillCorner(myTurtle, 1)
 
-    # fillCorner(myTurtle, 2) #draws a square with top right corner filled in.
-    # fillCorner(myTurtle, 3) #draws a square bottom left corner filled in.
+    myTurtle.hideturtle()
+    turtle.done()
 
-    # squaresInSquares(myTurtle, 5) #draws 5 concentric squares
-    # squaresInSquares(myTurtle, 3) #draws 3 concentric squares
-
-
+# Run the main function
 main()
