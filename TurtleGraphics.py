@@ -7,19 +7,19 @@ def drawSquare(t, size):
         t.right(90)
 
 # Function to fill a corner with a smaller square
-def fillCorner(alice, corner):
+def fillCorner(george, corner):
     # Draw big square
-    drawSquare(alice, 100)
+    drawSquare(george, 100)
 
     if corner == 1:
-        alice.begin_fill()
-        drawSquare(alice, 50)
-        alice.end_fill()
+        george.begin_fill()
+        drawSquare(george, 50)
+        george.end_fill()
     elif corner == 2:
-        alice.forward(50)
-        alice.begin_fill()
-        drawSquare(alice, 50)
-        alice.end_fill()
+        george.forward(50)
+        george.begin_fill()
+        drawSquare(george, 50)
+        george.end_fill()
 
 # Main function
 def main():
